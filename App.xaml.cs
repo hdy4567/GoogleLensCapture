@@ -16,21 +16,21 @@ namespace GoogleLensCapture
             mainWindow.Visibility = Visibility.Hidden;
             mainWindow.ShowInTaskbar = false;
 
-            _hotkey = new GlobalHotkey(mainWindow);
-            _hotkey.RegisterHotkey(GlobalHotkey.MOD_CTRL | GlobalHotkey.MOD_SHIFT, (int)System.Windows.Forms.Keys.S);
-            _hotkey.OnHotkey += Hotkey_OnHotkey;
+            try
+            {
+                _hotkey = new GlobalHotkey(mainWindow);
 
-            System.Windows.MessageBox.Show(
-                "Google Lens Capture Tool 실행 중\n\n단축키: Ctrl + Shift + S\n\n종료하려면 작업 관리자에서 프로세스를 종료하세요.",
-                "시작",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information
-            );
-        }
+                _hotkey.OnHotkey += () =>
+                {
+                    ScreenCaptureHandler.HandleCapture();
+                };
 
-        private void Hotkey_OnHotkey()
-        {
-            ScreenCaptureHandler.HandleCapture();
+                _hotkey.RegisterHotkey(GlobalHotkey.MOD_CTRL | GlobalHotkey.MOD_SHIFT, 'S');
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show($"Failed to register hotkey: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         protected override void OnExit(ExitEventArgs e)
