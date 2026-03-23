@@ -1,6 +1,8 @@
 # 🚀 Google Lens Capture - 최적화된 스크린샷 검색 도구
+**Ctrl + Shift + D** 한 번으로 스크린샷을 캡처하고 Google Lens에서 즉시 검색!
+[**[📥 Windows용 다운로드 (GoogleLensCapture.exe)]**](https://github.com/hdy4567/GoogleLensCapture/raw/master/GoogleLensCapture.exe)
 
-**Ctrl + Shift + S** 한 번으로 스크린샷을 캡처하고 Google Lens에서 즉시 검색!
+**Ctrl + Shift + D** 한 번으로 스크린샷을 캡처하고 Google Lens에서 즉시 검색!
 
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D6?logo=windows)](https://www.microsoft.com/windows)
@@ -33,7 +35,7 @@
 ## 🎮 사용법
 
 1. **프로그램 실행**: `GoogleLensCapture.exe` 더블클릭
-2. **캡처**: `Ctrl + Shift + S` 입력
+2. **캡처**: `Ctrl + Shift + D` 입력
 3. **영역 선택**: Windows 캡처 도구로 원하는 영역 선택
 4. **자동 검색**: Google Lens가 자동으로 열리며 검색 시작!
 
@@ -48,7 +50,7 @@
 
 ### 작동 흐름
 ```
-[1] Ctrl+Shift+S 감지
+[1] Ctrl+Shift+D 감지
 [2] Windows 캡처 도구 실행
 [3] 클립보드 이미지 대기
 [4] 원자적 비트맵 복제 (32bppPArgb)

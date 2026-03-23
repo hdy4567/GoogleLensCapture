@@ -34,7 +34,7 @@ namespace GoogleLensCapture
                     ScreenCaptureHandler.HandleCapture();
                 };
 
-                _hotkey.RegisterHotkey(GlobalHotkey.MOD_CTRL | GlobalHotkey.MOD_SHIFT, 'S');
+                _hotkey.RegisterHotkey(GlobalHotkey.MOD_CTRL | GlobalHotkey.MOD_SHIFT, 'D');
             }
             catch (Exception ex)
             {

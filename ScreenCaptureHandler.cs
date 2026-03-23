@@ -107,7 +107,7 @@ namespace GoogleLensCapture
                                 _atomicBitmap = new Bitmap(original.Width, original.Height, PixelFormat.Format32bppPArgb);
                                 using (var g = Graphics.FromImage(_atomicBitmap))
                                 {
-                                    g.DrawImage(original, 0, 0);
+                                    g.DrawImage(original, new Rectangle(0, 0, _atomicBitmap.Width, _atomicBitmap.Height));
                                 }
 
                                 System.Windows.Forms.Clipboard.SetImage(_atomicBitmap);
